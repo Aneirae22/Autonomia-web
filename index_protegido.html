@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autonom-IA - Equipo de automatización e IA en GeoPark">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function(){
+        emailjs.init('4Sa6YmO6HXsgmmzCV');
+      })();
+    </script>
+    <title>Autonom-IA - Hackers de GeoPark</title>
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p, ul, li, a, footer, .header-content, .equipo {
+            font-family: 'Times New Roman', Times, serif !important;
+        }
+        html {
+            background: linear-gradient(135deg, #a084e8 0%, #1a237e 100%);
+            min-height: 100vh;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: visible;
+            --gradient-color-1: #a084e8; /* Morado claro */
+            --gradient-color-2: #1a237e; /* Azul oscuro */
+            --gradient-color-3: #6a39af; /* Morado medio */
+            --gradient-color-4: #252580; /* Azul medio */
+            --gradient-color-5: #f2f0ff; /* Blanco con tinte morado */
+            --gradient-color-6: #2d1a4d; /* Morado muy oscuro */
+            --gradient-color-7: #3a3a5c; /* Gris azulado */
+        }
+        
+        html::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                var(--gradient-color-1) 0%, 
+                var(--gradient-color-3) 20%, 
+                var(--gradient-color-7) 40%,
+                var(--gradient-color-4) 60%,
+                var(--gradient-color-6) 80%,
+                var(--gradient-color-2) 100%);
+            z-index: -2;
+            animation: gradientFlow 25s ease infinite;
+            background-size: 500% 500%;
+        }
+        
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            25% {
+                background-position: 50% 25%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            75% {
+                background-position: 50% 75%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        html::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+            opacity: 0.7;
+            animation: wavesEffect 30s ease infinite;
+            background-image: 
+                radial-gradient(circle at 80% 40%, rgba(242, 240, 255, 0.25) 0%, rgba(242, 240, 255, 0) 35%),
+                radial-gradient(circle at 20% 80%, rgba(106, 57, 175, 0.4) 0%, rgba(106, 57, 175, 0) 30%),
+                radial-gradient(circle at 50% 60%, rgba(45, 26, 77, 0.35) 0%, rgba(45, 26, 77, 0) 40%),
+                radial-gradient(circle at 70% 20%, rgba(58, 58, 92, 0.3) 0%, rgba(58, 58, 92, 0) 35%),
+                radial-gradient(circle at 30% 30%, rgba(160, 132, 232, 0.35) 0%, rgba(160, 132, 232, 0) 45%);
+            background-size: 250% 250%;
+            mix-blend-mode: soft-light;
+        }
+        
+        @keyframes wavesEffect {
+            0% {
+                background-position: 0% 0%;
+                opacity: 0.6;
+            }
+            20% {
+                background-position: 40% 20%;
+                opacity: 0.65;
+            }
+            40% {
+                background-position: 80% 40%;
+                opacity: 0.7;
+            }
+            60% {
+                background-position: 100% 60%;
+                opacity: 0.75;
+            }
+            80% {
+                background-position: 60% 80%;
+                opacity: 0.7;
+            }
+            100% {
+                background-position: 0% 0%;
+                opacity: 0.6;
+            }
+        }
+        
+        body {
+            background: transparent;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+            height: auto;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        header {
+            /* Gradial estático de negro más claro a negro puro para integración visual */
+            background: linear-gradient(to right, #18181b 0%, #000000 100%);
+            color: #fff;
+            padding: 20px 0 15px 0;
+            text-align: left;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            /* Outline degradado para transición visual con la imagen GeoPark.png */
+            border-bottom: 0.5em solid;
+            border-image: linear-gradient(to right, #111014 0%, #18181b 30%, #19191a 60%, #18181b 100%);
+            border-image-slice: 1;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-bottom: 15px;
+            position: relative;
+        }
+        .header-bottom {
+            /* Fondo igual al header principal para integración visual */
+            background: linear-gradient(to right, #18181b 0%, #000000 100%);
+            width: 100%;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid rgba(160, 132, 232, 0.0); /* Sin línea visible */
+        }
+        .header-accordions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1300px;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .header-extension {
+            display: none; /* Ya no necesitamos esta extensión */
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+            padding-bottom: 600px;
+            min-height: 1200px;
+            margin-top: 20px; /* Añadido para dar espacio después del header sticky */
+        }
+        main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px 12px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        @media (max-width: 1200px) {
+            main {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 700px) {
+            main {
+                grid-template-columns: 1fr;
+                padding: 0 4px;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-accordions {
+                gap: 6px;
+                padding: 0 10px;
+            }
+            .accordion {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+            .header-top {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            .header-right {
+                margin-top: 10px;
+                margin-left: 0;
+                justify-content: center;
+            }
+            .logo {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            .logo-geopark {
+                margin-right: 0;
+            }
+            .header-content h1 {
+                font-size: 1.3em;
+                padding: 6px 12px;
+            }
+            .ai-agent-btn, .header-accordion {
+                padding: 6px 12px;
+                font-size: 1em;
+            }
+        }
+        .accordion-block {
+            min-width: 0;
+            max-width: 180px;
+            flex: 0 1 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            margin: 0 5px;
+            position: relative;
+        }
+        .accordion {
+            background: #111014;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 15px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 0.95em;
+            border-radius: 8px;
+            margin-bottom: 0;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(26,35,126,0.10);
+            outline: 2.5px solid #a084e8;
+            outline-offset: -2.5px;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .accordion:after {
+            content: '\002B';
+            color: #a084e8;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+        .accordion:hover, .accordion.active {
+            background: #2d1a4d;
+            box-shadow: 0 6px 20px rgba(160,132,232,0.18);
+        }
+        .panel {
+            padding: 0 10px 12px 10px;
+            background: #fff;
+            color: #222;
+            border-radius: 0 0 18px 18px;
+            margin-bottom: 0;
+            display: none;
+            opacity: 0;
+            transition: max-height 0.7s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.7s;
+            box-shadow: 0 4px 16px rgba(26,35,126,0.10);
+            outline: 2.5px solid #a084e8;
+            outline-offset: -2.5px;
+            font-size: 0.97em;
+            overflow: hidden;
+        }
+        .panel.show {
+            display: block;
+            opacity: 1;
+        }
+        .panel-content {
+            opacity: 1;
+            transform: none;
+            min-height: 0;
+        }
+        .equipo {
+            margin-top: 30px;
+        }
+        a {
+            color: #1a237e;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #a084e8;
+        }
+        footer {
+            text-align: center;
+            color: #a084e8;
+            margin: 40px 0 10px 0;
+        }
+        .logo {
+            width: 80px;
+            margin-left: 32px;
+            margin-right: 24px;
+            display: block;
+            /* outline removido */
+            border-radius: 8px;
+        }
+        .logo-geopark {
+            width: 80px;
+            display: block;
+            background: none;
+            border-radius: 0;
+            margin: 0;
+            box-shadow: none;
+            position: absolute;
+            top: 18px;
+            right: 32px;
+            z-index: 1002;
+        }
+        .header-actions {
+            position: absolute;
+            top: 28px;
+            right: 140px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 12px;
+            z-index: 1002;
+        }
+        .header-buttons {
+            position: absolute;
+            top: 110px; /* Debajo del logo (logo height + margen) */
+            right: 32px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 10px;
+            z-index: 1001;
+        }
+        .header-content h1 {
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 1.5em;
+            position: relative;
+        }
+        .header-content h1::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #a084e8;
+            border-radius: 4px;
+            margin: 6px auto 0 auto;
+        }
+        .header-content p {
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            font-size: 1.15em;
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+        .header-content p::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #a084e8;
+            border-radius: 4px;
+            margin: 6px auto 0 auto;
+        }
+        /* Modal tipo Word para acordeones */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(30, 20, 50, 0.45);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #fff;
+            color: #222;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(26,35,126,0.18);
+            max-width: 700px;
+            width: 90vw;
+            max-height: 80vh;
+            padding: 58px 60px 40px 56px;
+            position: relative;
+            overflow-y: auto;
+            animation: modalFadeIn 0.5s;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.15em;
+            line-height: 1.7;
+            margin: 0 auto;
+            z-index: 1101;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: #a084e8;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .modal-content h3, .modal-content h2 {
+            color: var(--color-secondary);
+            margin-top: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .modal-content ul {
+            padding-left: 22px;
+            margin-bottom: 18px;
+        }
+        .modal-content ul li {
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        .modal-content p {
+            margin: 12px 0 12px 0;
+            text-align: justify;
+        }
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #a084e8;
+            border-radius: 8px;
+        }
+        @keyframes verticalSlide {
+            0% { opacity: 1; transform: translateY(0); }
+            30% { opacity: 0; transform: translateY(-40px); }
+            31% { opacity: 0; transform: translateY(40px); }
+            60% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .accordion .accordion-title {
+            display: inline-block;
+            animation: none;
+        }
+        .accordion.animate-title .accordion-title {
+            animation: verticalSlide 0.3s 1;
+        }
+        /* Imagen .avif como link con overlay */
+        .geopark-link-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            position: relative;
+            top: 100px;
+            z-index: 10;
+            opacity: 0; /* Inicialmente invisible */
+            margin-bottom: 200px;
+            transition: opacity 0.3s ease-out;
+        }
+        .geopark-image-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .geopark-text {
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.2em;
+            text-align: center;
+            max-width: 220px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            line-height: 1.3;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0; /* Inicialmente invisible */
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .geopark-text.fade-out {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+        .arrow-down, .arrow-right, .arrow-left {
+            transition: opacity 0.25s ease-out;
+        }
+        
+        /* Ajustes para las transiciones de los elementos */
+        .geopark-text:first-child {
+            transform: translateX(-20px) translateY(20px);
+            transition-delay: 0.05s;
+        }
+        
+        .geopark-text:last-child {
+            transform: translateX(20px) translateY(20px);
+            transition-delay: 0.05s;
+        }
+        
+        .arrow-right {
+            width: 30px;
+            height: 30px;
+            border-top: 3px solid white;
+            border-right: 3px solid white;
+            transform: rotate(45deg) scale(0.8) translateX(-10px);
+            margin-top: 15px;
+            animation: arrowPulse 2s infinite;
+            opacity: 0; /* Inicialmente invisible */
+            transition-delay: 0.1s;
+        }
+        
+        .arrow-left {
+            width: 30px;
+            height: 30px;
+            border-bottom: 3px solid white;
+            border-left: 3px solid white;
+            transform: rotate(45deg) scale(0.8) translateX(10px);
+            margin-top: 15px;
+            animation: arrowPulse 2s infinite;
+            opacity: 0; /* Inicialmente invisible */
+            transition-delay: 0.1s;
+        }
+        .geopark-link {
+            display: inline-block;
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            outline: 3px solid #111014;
+            outline-offset: 4px;
+            opacity: 0; /* Inicialmente invisible */
+            transform: scale(0.95);
+            transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+            transition-delay: 0.1s;
+        }
+        
+        /* Clase específica para la desaparición de la imagen */
+        .geopark-link.fade-out {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+            transition-delay: 0s;
+        }
+        
+        /* Ajuste para la imagen dentro del enlace */
+        .geopark-link img {
+            max-width: 90vw;
+            width: 700px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(26,35,126,0.10);
+            transition: opacity 0.25s ease-out, filter 0.25s;
+            opacity: 1;
+            display: block;
+        }
+        .geopark-link:hover img {
+            filter: brightness(0.5);
+        }
+        .geopark-link .geopark-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .geopark-link:hover .geopark-overlay {
+            opacity: 1;
+        }
+        .geopark-link .geopark-overlay span {
+            color: #1a237e;
+            background: #f4f6fa;
+            outline: 2.5px solid #a084e8;
+            outline-offset: 2px;
+            padding: 16px 36px;
+            border-radius: 12px;
+            font-size: 1.4em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 12px rgba(26,35,126,0.18);
+        }
+        .header-accordion .header-accordion-title {
+            display: inline-block;
+            animation: none;
+        }
+        .header-accordion.animate-title .header-accordion-title {
+            animation: verticalSlide 0.3s 1;
+        }
+        .header-accordion {
+            outline: 2.5px solid #a084e8;
+            outline-offset: 2px;
+            border-radius: 8px;
+            padding: 6px 18px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            position: relative;
+            margin: 0 2px;
+            transition: outline-color 0.2s, background 0.2s;
+        }
+        .header-accordion:hover {
+            background: #2d1a4d;
+            outline-color: #fff;
+        }
+        .header-title-geopark {
+            color: #fff;
+            font-size: 0.6em;
+        }
+        .main-phrase-autonomia {
+            font-weight: bold;
+        }
+        /* Eliminar posición fija del footer para que no esté anclado */
+        .sticky-footer {
+            /* position: fixed; */
+            position: static;
+            left: unset;
+            bottom: unset;
+            width: 100%;
+            background: #111014;
+            color: #a084e8;
+            text-align: center;
+            padding: 20px 0;
+            z-index: 990;
+            font-size: 1.15em;
+            letter-spacing: 0.5px;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+            margin-top: 60px;
+        }
+        @media (max-width: 700px) {
+            .sticky-footer {
+                padding: 14px 0;
+                font-size: 1em;
+            }
+        }
+        /* Estilos para el botón del Agente GPT */
+        .ai-agent-btn {
+            outline: 2.5px solid #a084e8;
+            outline-offset: 2px;
+            border-radius: 8px;
+            padding: 6px 18px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            position: relative;
+            margin: 0 2px;
+            transition: outline-color 0.2s, background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ai-agent-btn:hover {
+            background: #2d1a4d;
+            outline-color: #fff;
+        }
+        .ai-agent-btn .ai-icon {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .ai-agent-btn .ai-agent-title {
+            display: inline-block;
+            animation: none;
+        }
+        .ai-agent-btn.animate-title .ai-agent-title {
+            animation: verticalSlide 0.3s 1;
+        }
+        
+        /* Modal para el Agente GPT */
+        .ai-agent-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(30, 20, 50, 0.45);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+        .ai-agent-modal-overlay.active {
+            display: flex;
+        }
+        .ai-agent-modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f4f1fc 40%, #e6dffa 70%, #d8c9ff 100%);
+            color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(26,35,126,0.18);
+            max-width: 800px;
+            width: 90vw;
+            height: 600px;
+            padding: 40px;
+            position: relative;
+            animation: modalFadeIn 0.5s;
+            display: flex;
+            flex-direction: column;
+        }
+        .ai-agent-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: var(--color-secondary);
+            cursor: pointer;
+            z-index: 10;
+        }
+        .ai-agent-modal-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .ai-agent-modal-header h2 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+        .ai-agent-modal-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ai-agent-placeholder {
+            text-align: center;
+            padding: 20px;
+        }
+        .ai-agent-placeholder p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            color: #333;
+        }
+        .ai-agent-btn-large {
+            background: linear-gradient(135deg, #a084e8 0%, #6a39af 100%);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(106, 57, 175, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .ai-agent-btn-large:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(106, 57, 175, 0.4);
+        }
+        .ai-agent-btn-large .ai-icon {
+            font-size: 1.3em;
+        }
+        
+        /* Estilos para el formulario de contacto */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #fff;
+            background: #a084e8;
+            padding: 6px 16px;
+            border-radius: 8px;
+            width: fit-content;
+            box-shadow: 0 2px 8px rgba(160,132,232,0.10);
+        }
+        .panel-content h2,
+        .panel-content h3,
+        .panel-content strong,
+        .panel-content b,
+        .modal-content h2,
+        .modal-content h3,
+        .modal-content strong,
+        .modal-content b {
+            color: #fff !important;
+            background: #a084e8;
+            padding: 8px 20px;
+            border-radius: 10px;
+            width: fit-content;
+            margin: 18px auto 14px auto;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(160,132,232,0.10);
+            display: block;
+        }
+        /* Fondo gradial suave para paneles de acordeón y modales */
+        .panel-content,
+        .modal-content {
+            background: linear-gradient(135deg, #f4f1fc 0%, #e6dffa 60%, #d8c9ff 100%);
+            /* Colores suaves inspirados en el archivo de la marca */
+        }
+        /* El texto general de los paneles y modales se mantiene negro */
+        .panel-content,
+        .modal-content {
+            color: #222;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 8px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            background-color: white;
+            color: #000;
+            outline: 2px solid #000;
+            outline-offset: -1px;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .submit-btn {
+            background: #6a39af;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 10px;
+            outline: none;
+            box-shadow: none;
+            transition: none;
+            font-weight: bold;
+        }
+        .submit-btn:hover {
+            background: #4b277a;
+            color: #fff;
+        }
+        /* Modal para formulario de contacto */
+        .contact-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(30, 20, 50, 0.45);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-modal-overlay.active {
+            display: flex;
+        }
+        .contact-modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f4f1fc 40%, #e6dffa 70%, #d8c9ff 100%);
+            color: #000;
+            border-radius: 12px;
+            box-shadow: 0 8px 40px rgba(26,35,126,0.18);
+            max-width: 600px;
+            width: 90vw;
+            padding: 40px;
+            position: relative;
+            animation: modalFadeIn 0.5s;
+        }
+        .contact-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: var(--color-secondary);
+            cursor: pointer;
+            z-index: 10;
+        }
+        /* Estilos para el pop-up de confirmación */
+        .confirmation-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+            z-index: 2000;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 2px solid var(--color-primary);
+        }
+        .confirmation-popup.active {
+            display: block;
+            animation: popupFadeIn 0.4s;
+        }
+        .confirmation-popup h3 {
+            color: var(--color-secondary);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .confirmation-popup p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .confirmation-popup button {
+            background: var(--color-primary);
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(26,35,126,0.2);
+            opacity: 1;
+            border: 2px solid var(--color-secondary);
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 1px rgba(0,0,0,0.2);
+        }
+        @keyframes popupFadeIn {
+            from { opacity: 0; transform: translate(-50%, -60%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        .overlay-backdrop {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1999;
+        }
+        .overlay-backdrop.active {
+            display: block;
+        }
+        /* Clases para elementos visibles */
+        .visible-element {
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
+        
+        @keyframes arrowPulse {
+            0% {
+                opacity: 0.6;
+                transform: rotate(45deg) scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: rotate(45deg) scale(1);
+            }
+            100% {
+                opacity: 0.6;
+                transform: rotate(45deg) scale(0.8);
+            }
+        }
+        
+        /* Estilos para la futura integración con la API de ChatGPT */
+        /* Estos estilos están comentados y se deben descomentar cuando se implemente la API */
+        /*
+        .ai-agent-chat {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .ai-agent-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .ai-message {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .ai-message.user-message {
+            justify-content: flex-end;
+        }
+        
+        .ai-message-content {
+            background: #6a39af;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 80%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .user-message .ai-message-content {
+            background: #1a237e;
+        }
+        
+        .ai-agent-input {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+        
+        .ai-agent-input textarea {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #a084e8;
+            border-radius: 8px;
+            resize: none;
+            height: 60px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+        }
+        
+        .ai-agent-input button {
+            background: linear-gradient(135deg, #a084e8 0%, #6a39af 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .ai-agent-input button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(106, 57, 175, 0.3);
+        }
+        
+        .ai-agent-modal-content {
+            height: 70vh;
+            max-height: 700px;
+        }
+        */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <img src="Dale AutonomIA a tu mente..png" alt="Logo AutonomIA" class="logo">
+            <img src="GeoPark.png" alt="Logo GeoPark" class="logo-geopark">
+            <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
+                <h1>Autonom-IA <span class="header-title-geopark">- Hackers de</span> GeoPark</h1>
+                <p>Dale <span class="main-phrase-autonomia">AutonomIA</span> a tu mente</p>
+            </div>
+            <div class="header-actions">
+                <button class="ai-agent-btn" id="ai-agent-btn">
+                    <span class="ai-agent-title">Agente GPT</span>
+                </button>
+                <button class="header-accordion" id="contactanos-btn">
+                    <span class="header-accordion-title">Contactanos</span>
+                </button>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-accordions">
+                <div class="accordion-block">
+                    <button class="accordion" aria-expanded="false" aria-controls="panel-1"><span class="accordion-title">Que somos</span></button>
+                </div>
+                <div class="accordion-block">
+                    <button class="accordion" aria-expanded="false" aria-controls="panel-2"><span class="accordion-title">El Equipo</span></button>
+                </div>
+                <div class="accordion-block">
+                    <button class="accordion" aria-expanded="false" aria-controls="panel-3"><span class="accordion-title">Objetivo</span></button>
+                </div>
+                <div class="accordion-block">
+                    <button class="accordion" aria-expanded="false" aria-controls="panel-4"><span class="accordion-title">Nuestra identidad</span></button>
+                </div>
+                <div class="accordion-block">
+                    <button class="accordion" aria-expanded="false" aria-controls="panel-5"><span class="accordion-title">Misión y visión</span></button>
+                </div>
+                <div class="accordion-block">
+                    <button class="accordion" aria-expanded="false" aria-controls="panel-6"><span class="accordion-title">Nuestras frases</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    
+    <div class="content-wrapper">
+        <main>
+            
+            <!-- Los paneles de contenido permanecen aquí pero ocultos -->
+            <div class="panel" id="panel-1" role="region" style="display: none;"><div class="panel-content">En el corazón de GeoPark existe un grupo audaz, creativo e inteligente que desafía la forma tradicional de trabajar. Somos los IA Hackers, un equipo diseñado para transformar procesos con velocidad, criterio y propósito. Nuestra meta es clara: automatizar con astucia los puntos de fricción que limitan el impacto de la organización, liberar el pensamiento estratégico y empujar a GeoPark hacia una operación más ágil, más precisa, más inteligente.</div></div>
+            
+            <div class="panel" id="panel-2" role="region" style="display: none;"><div class="panel-content">
+                <h3>IA Hackers (los chicos)</h3>
+                <p>Jóvenes con hambre de impacto y talento para materializar ideas en soluciones funcionales en tiempo récord. Dominan herramientas como Power Automate, LangChain, Zapier, Cursor o las que el reto requiera. Les apasiona explorar, romper y reconstruir. Detectan patrones, rediseñan procesos y conectan piezas que antes no se hablaban. Son agentes de cambio que entienden que la tecnología no reemplaza a las personas: potencia su criterio.</p>
+                <h3>IA Hacker LEAD</h3>
+                <p>El equipo es liderado con una visión estratégica, acompañando desde la priorización, la gestión de valor y la conexión con los desafíos reales del negocio. El rol del liderazgo no es ser el más técnico, sino asegurar que cada IA Hacker tenga claridad, foco, contexto y el espacio necesario para experimentar, fallar rápido, aprender más rápido y escalar soluciones con impacto. Esta guía permite que la creatividad se transforme en resultados concretos y visibles.</p>
+            </div></div>
+            
+            <div class="panel" id="panel-3" role="region" style="display: none;"><div class="panel-content">
+                <p>Queremos que GeoPark piense y actúe como una organización 2.5x más productiva. Para eso no nos limitamos a automatizar lo que ya existe: repensamos desde la raíz. Cuestionamos lo obvio, proponemos lo audaz, y nos enfocamos en lo que realmente genera valor.</p>
+                <p>Donde haya ineficiencia, intervenimos. Donde un proceso se estanca, lo reimaginamos. Donde alguien dice 'esto siempre se ha hecho así', nosotros preguntamos '¿y si lo hiciéramos diferente?'</p>
+            </div></div>
+            
+            <div class="panel" id="panel-4" role="region" style="display: none;"><div class="panel-content">
+                <p>No queremos pasar desapercibidos. Cuando trabajamos en un flujo, cuando prototipamos en tiempo récord, cuando una solución ahorra horas o eleva el criterio de decisión, queremos que se sepa que fue obra del equipo. Somos IA Hackers y queremos que se note.</p>
+                <p>No por ego, sino porque representamos una nueva manera de pensar y trabajar. Nuestro estilo es directo, curioso y valiente. Queremos que donde vayamos, se reconozca una actitud: la de quien no acepta lo establecido, la de quien ve el futuro en cada proceso, y lo acerca al presente con inteligencia, criterio y tecnología.</p>
+            </div></div>
+            
+            <div class="panel" id="panel-5" role="region" style="display: none;"><div class="panel-content">
+                <h3>Misión</h3>
+                <p>Impulsar una nueva forma de trabajar en GeoPark donde la tecnología, la automatización y la IA se integren naturalmente a procesos rediseñados desde la raíz, promoviendo un cambio de mindset que eleve el criterio, la agilidad y el impacto hacia una organización 2,5x más productiva.</p>
+                <h3>Visión</h3>
+                <p>Ser catalizadores del cambio cultural en GeoPark, promoviendo una mentalidad donde la eficiencia, el rediseño inteligente y el uso de tecnología sean la norma. Acompañar a las personas para trabajar con más criterio, menos fricción y mayor impacto, construyendo una organización ágil, enfocada y preparada para el futuro.</p>
+                <h3>Objetivos del Equipo</h3>
+                <ul>
+                    <li>Transformar con impacto real<br>Rediseñar procesos clave antes de automatizarlos, centrados en valor.<br>Identificar y acompañar oportunidades de alto impacto para liberar tiempo y aumentar productividad.</li>
+                    <li>Impulsar una cultura de pensamiento tecnológico<br>Promover eficiencia y rediseño como parte del día a día.<br>Elevar el criterio en la toma de decisiones con IA y automatización.</li>
+                    <li>Experimentar y escalar con velocidad<br>Prototipar en días usando herramientas como Power Automate, LangChain, Zapier, n8n.<br>Fomentar el aprendizaje rápido y el intercambio de hacks y buenas prácticas.</li>
+                    <li>Usar la tecnología con responsabilidad<br>Asegurar uso ético y transparente de datos, IA y automatizaciones.</li>
+                </ul>
+            </div></div>
+            
+            <div class="panel" id="panel-6" role="region" style="display: none;"><div class="panel-content">
+                <p>Estas solo son algunas de las frases que nos representan, y las cuales nos repetimos constantemente en busqueda de mejorar el espacio laboral donde compartimos con nuestros compañeros de trabajo, y recordarnos el por qué hacemos esto en primer lugar.</p>
+                <h3>Cambio de mentalidad</h3>
+                <ul>
+                    <li>Primero pensamos, luego automatizamos.</li>
+                    <li>No se trata de hacer lo mismo más rápido, sino de hacer lo correcto de forma más inteligente.</li>
+                    <li>El criterio no se automatiza, se eleva.</li>
+                    <li>Tecnología con propósito, no por moda.</li>
+                </ul>
+                <h3>Velocidad con sentido</h3>
+                <ul>
+                    <li>De idea a valor en días, no semanas.</li>
+                    <li>De lunes a prototipo, a viernes en producción.</li>
+                    <li>Fallamos rápido, aprendemos más rápido.</li>
+                    <li>Del insight al impacto en tiempo récord.</li>
+                </ul>
+                <h3>Foco en lo que importa</h3>
+                <ul>
+                    <li>Automatizamos lo que molesta, optimizamos lo que importa.</li>
+                    <li>Menos tareas repetitivas, más impacto real.</li>
+                    <li>Reducción de horas hombre, aumento de valor estratégico.</li>
+                    <li>No digitalizamos la ineficiencia: la rediseñamos.</li>
+                </ul>
+                <h3>Responsabilidad y confianza</h3>
+                <ul>
+                    <li>La confianza no se programa: se construye con tecnología responsable.</li>
+                    <li>La IA no reemplaza personas, potencia su impacto.</li>
+                </ul>
+            </div></div>
+            
+            
+        </div>
+        <div class="autonomia-col-right" style="display:none;"></div>
+        
+        <div class="geopark-link-container" id="geopark-img-container">
+            <div class="geopark-image-wrapper">
+                <div class="geopark-text">
+                    Para más información...
+                    <div class="arrow-right"></div>
+                </div>
+                <a href="https://www.geo-park.com/es/" target="_blank" class="geopark-link" id="geopark-link">
+                    <img src="GeoParkImg.avif" alt="GeoPark" id="geopark-img" loading="lazy">
+                    <div class="geopark-overlay"><span>Sobre GeoPark</span></div>
+                </a>
+                <div class="geopark-text">
+                    Visita el link de la imagen.
+                    <div class="arrow-left"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="sticky-footer">
+        <span>&copy; 2025 Autonom-IA - GeoPark</span>
+    </footer>
+    <!-- Modal para acordeones tipo Word -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content" id="modal-content">
+            <button class="modal-close" id="modal-close" title="Cerrar">&times;</button>
+            <!-- El contenido del acordeón se insertará aquí -->
+        </div>
+    </div>
+    <!-- Modal para formulario de contacto -->
+    <div class="contact-modal-overlay" id="contact-modal-overlay">
+        <div class="contact-modal-content">
+            <button class="contact-modal-close" id="contact-modal-close" title="Cerrar">&times;</button>
+            <h2 style="color: #000; text-align: center; margin-bottom: 30px;">Contáctanos</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Cargo:</label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                <div class="form-group">
+                    <label for="question">Duda:</label>
+                    <textarea id="question" name="question" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo profesional:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <!-- Pop-up de confirmación -->
+    <div class="confirmation-popup" id="confirmation-popup">
+        <h3>Mensaje Enviado</h3>
+        <p id="confirmation-message"></p>
+        <button id="confirmation-close"><strong>Aceptar</strong></button>
+    </div>
+    <div class="overlay-backdrop" id="overlay-backdrop"></div>
+    
+    <!-- Modal para el Agente GPT -->
+    <div class="ai-agent-modal-overlay" id="ai-agent-modal-overlay">
+        <div class="ai-agent-modal-content">
+            <button class="ai-agent-modal-close" id="ai-agent-modal-close" title="Cerrar">&times;</button>
+            <div class="ai-agent-modal-header">
+                <h2>Agente IA de AutonomIA</h2>
+                <p>Tu asistente virtual especializado en automatización e inteligencia artificial</p>
+            </div>
+            <div class="ai-agent-modal-body">
+                <div class="ai-agent-placeholder">
+                    <p>Nuestro agente de IA está diseñado para responder tus preguntas sobre automatización, inteligencia artificial y cómo AutonomIA puede ayudarte en GeoPark.</p>
+                    <p>Por el momento, te redirigiremos a ChatGPT. En el futuro, contaremos con nuestro propio agente especializado.</p>
+                    <a href="https://chat.openai.com" target="_blank" class="ai-agent-btn-large">
+                        <span>Ir a ChatGPT</span>
+                        <span class="ai-icon">→</span>
+                    </a>
+                </div>
+                
+                <!-- 
+                PUNTO DE INTEGRACIÓN FUTURA CON API DE CHATGPT
+                
+                Para integrar un agente específico de ChatGPT, reemplazar el contenido de ai-agent-placeholder
+                con una interfaz de chat y agregar el siguiente código:
+                
+                1. Inicialización de la API de OpenAI:
+                ```javascript
+                // Configuración de la API
+                const openaiApiKey = 'TU_API_KEY';
+                const openaiModel = 'gpt-4-turbo'; // O el modelo específico que se desee usar
+                
+                // Función para enviar mensajes al agente
+                async function sendMessageToAgent(message) {
+                    try {
+                        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${openaiApiKey}`
+                            },
+                            body: JSON.stringify({
+                                model: openaiModel,
+                                messages: [
+                                    {
+                                        role: "system", 
+                                        content: "Eres un asistente especializado en automatización e IA para el equipo AutonomIA de GeoPark. Tu objetivo es ayudar a responder preguntas sobre procesos de automatización, uso de IA y cómo el equipo puede ayudar en diferentes áreas de la empresa."
+                                    },
+                                    { role: "user", content: message }
+                                ]
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        return data.choices[0].message.content;
+                    } catch (error) {
+                        console.error('Error al comunicarse con la API de OpenAI:', error);
+                        return 'Lo siento, ha ocurrido un error al procesar tu solicitud.';
+                    }
+                }
+                ```
+                
+                2. Interfaz de usuario para el chat:
+                ```html
+                <div class="ai-agent-chat">
+                    <div class="ai-agent-messages" id="ai-agent-messages">
+                        <!-- Los mensajes se agregarán aquí dinámicamente -->
+                        <div class="ai-message">
+                            <div class="ai-message-content">
+                                Hola, soy el asistente de AutonomIA. ¿En qué puedo ayudarte hoy?
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-agent-input">
+                        <textarea id="ai-agent-input-text" placeholder="Escribe tu pregunta aquí..."></textarea>
+                        <button id="ai-agent-send-btn">Enviar</button>
+                    </div>
+                </div>
+                ```
+                
+                3. Estilos adicionales necesarios para la interfaz de chat
+                -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos
+            const accordions = document.querySelectorAll('.accordion');
+            const panels = document.querySelectorAll('.panel');
+            const modalOverlay = document.getElementById('modal-overlay');
+            const modalContent = document.getElementById('modal-content');
+            const modalClose = document.getElementById('modal-close');
+            const geoparkLink = document.getElementById('geopark-link');
+            const geoparkImg = document.getElementById('geopark-img');
+            const contactanosBtn = document.getElementById('contactanos-btn');
+            const headerAccordions = document.querySelector('.header-accordions');
+            const mainElement = document.querySelector('main');
+            const geoparkImgContainer = document.getElementById('geopark-img-container');
+            const header = document.querySelector('header');
+            const headerBottom = document.querySelector('.header-bottom');
+            const aiAgentBtn = document.getElementById('ai-agent-btn');
+            const aiAgentModalOverlay = document.getElementById('ai-agent-modal-overlay');
+            const aiAgentModalClose = document.getElementById('ai-agent-modal-close');
+            const geoparkTexts = document.querySelectorAll('.geopark-text');
+            const geoparkArrows = document.querySelectorAll('.arrow-right, .arrow-left');
+            const contactModalOverlay = document.getElementById('contact-modal-overlay');
+            const contactModalClose = document.getElementById('contact-modal-close');
+            const contactForm = document.getElementById('contact-form');
+            const confirmationPopup = document.getElementById('confirmation-popup');
+            const confirmationMessage = document.getElementById('confirmation-message');
+            const confirmationClose = document.getElementById('confirmation-close');
+            const overlayBackdrop = document.getElementById('overlay-backdrop');
+
+            // Animaciones y funcionalidad para los acordeones en el header
+            if (headerAccordions) {
+                headerAccordions.addEventListener('click', function(e) {
+                    const accordion = e.target.closest('.accordion');
+                    if (accordion) {
+                        // Limpiar el modal
+                        modalContent.querySelectorAll('.modal-dynamic').forEach(e => e.remove());
+                        // Obtener el ID del panel correspondiente
+                        const panelId = accordion.getAttribute('aria-controls');
+                        const panel = document.getElementById(panelId);
+                        if (panel) {
+                            // Mostrar el contenido del panel en el modal
+                            const dynamicDiv = document.createElement('div');
+                            dynamicDiv.classList.add('modal-dynamic');
+                            dynamicDiv.innerHTML = panel.innerHTML;
+                            modalContent.appendChild(dynamicDiv);
+                            modalOverlay.classList.add('active');
+                            if (geoparkImg) geoparkImg.style.opacity = '0.3';
+                        }
+                    }
+                });
+                // Eventos para hover en acordeones del header
+                headerAccordions.addEventListener('mouseenter', function(e) {
+                    const accordion = e.target.closest('.accordion');
+                    if (accordion) {
+                        accordion.classList.add('animate-title');
+                    }
+                }, true);
+                headerAccordions.addEventListener('animationend', function(e) {
+                    if (e.target.classList.contains('accordion-title')) {
+                        const accordion = e.target.closest('.accordion');
+                        if (accordion) {
+                            accordion.classList.remove('animate-title');
+                        }
+                    }
+                }, true);
+            }
+            // Animaciones para los botones Agente GPT y Contactanos
+            if (aiAgentBtn) {
+                aiAgentBtn.addEventListener('mouseenter', function() {
+                    aiAgentBtn.classList.add('animate-title');
+                });
+                aiAgentBtn.addEventListener('animationend', function(e) {
+                    if (e.target.classList.contains('ai-agent-title')) {
+                        aiAgentBtn.classList.remove('animate-title');
+                    }
+                });
+            }
+            if (contactanosBtn) {
+                contactanosBtn.addEventListener('mouseenter', function() {
+                    contactanosBtn.classList.add('animate-title');
+                });
+                contactanosBtn.addEventListener('animationend', function(e) {
+                    if (e.target.classList.contains('header-accordion-title')) {
+                        contactanosBtn.classList.remove('animate-title');
+                    }
+                });
+            }
+            // Cerrar el modal de acordeón
+            modalClose.addEventListener('click', () => {
+                modalOverlay.classList.remove('active');
+                if (geoparkImg) geoparkImg.style.opacity = '1';
+            });
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    modalOverlay.classList.remove('active');
+                    if (geoparkImg) geoparkImg.style.opacity = '1';
+                }
+            });
+            // Mostrar elementos de GeoPark al hacer scroll (visibilidad)
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const visibleThreshold = windowHeight * 0.35;
+                const visibleBottom = windowHeight * 0.65;
+                return (rect.top <= visibleBottom && rect.bottom >= visibleThreshold);
+            }
+            let scrollTimeout;
+            function handleGeoParkVisibility() {
+                if (scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                scrollTimeout = window.requestAnimationFrame(function() {
+                    if (geoparkImgContainer) {
+                        const isVisible = isElementInViewport(geoparkImgContainer);
+                        if (isVisible) {
+                            geoparkImgContainer.classList.add('visible-element');
+                            if (geoparkLink) {
+                                geoparkLink.classList.remove('fade-out');
+                                geoparkLink.classList.add('visible-element');
+                            }
+                            geoparkTexts.forEach(text => {
+                                text.classList.remove('fade-out');
+                                text.classList.add('visible-element');
+                            });
+                            geoparkArrows.forEach(arrow => {
+                                arrow.classList.add('visible-element');
+                            });
+                        } else {
+                            geoparkImgContainer.classList.remove('visible-element');
+                            if (geoparkLink) {
+                                geoparkLink.classList.add('fade-out');
+                                setTimeout(() => {
+                                    if (!isElementInViewport(geoparkImgContainer)) {
+                                        geoparkLink.classList.remove('visible-element');
+                                    }
+                                }, 20);
+                            }
+                            geoparkTexts.forEach(text => {
+                                text.classList.add('fade-out');
+                                setTimeout(() => {
+                                    if (!isElementInViewport(geoparkImgContainer)) {
+                                        text.classList.remove('visible-element');
+                                    }
+                                }, 20);
+                            });
+                            geoparkArrows.forEach(arrow => {
+                                arrow.classList.remove('visible-element');
+                            });
+                        }
+                    }
+                });
+            }
+            window.addEventListener('scroll', handleGeoParkVisibility);
+            handleGeoParkVisibility();
+            
+            // Funcionalidad personalizada para el botón Agente GPT
+            if (aiAgentBtn) {
+                aiAgentBtn.addEventListener('click', function() {
+                    // Limpiar el modal
+                    modalContent.querySelectorAll('.modal-dynamic').forEach(e => e.remove());
+                    // Crear el contenido personalizado
+                    const dynamicDiv = document.createElement('div');
+                    dynamicDiv.classList.add('modal-dynamic');
+                    dynamicDiv.innerHTML = `
+                        <div class="panel-content">
+                            <h2 style="text-align:center; color: #fff; background: #a084e8; padding: 10px 24px; border-radius: 10px; width: fit-content; margin: 0 auto 30px auto; font-weight: bold; box-shadow: 0 2px 8px rgba(160,132,232,0.10);">Agente GPT de AutonomIA</h2>
+                            <p>Bienvenido al espacio de nuestro: <strong>Agente GPT</strong>Una herramienta diseñada para potenciar la automatización y la inteligencia artificial en GeoPark. Aquí podrás descubrir cómo la IA puede ayudarte a resolver desafíos, optimizar procesos y liberar tu potencial estratégico.</p>
+                            <ul>
+                                <li>Resuelve dudas sobre automatización y tecnología dentro de la empresa.</li>
+                                <li>Aprende buenas prácticas y casos de uso de IA para facilitar tu trabajo.</li>
+                                <li>Conoce cómo el equipo AutonomIA ha diseñado las distintas IAs que cumplen varias funciones simultáneamente.</li>
+                                <li>Explora recursos y herramientas recomendadas por el equipo para mayor comodidad.</li>
+                            </ul>
+                            <p>¿Quieres ver uno de nuestros proyectos en acción? Haz clic en el botón a continuación para conocer a nuestro agente actual.</p>
+                            <div style="text-align:center; margin-top: 30px;">
+                                <a href="https://chat.openai.com" target="_blank" style="display:inline-block; background: linear-gradient(135deg, #a084e8 0%, #6a39af 100%); color: #fff; font-weight: bold; font-size: 1.1em; padding: 14px 32px; border-radius: 10px; text-decoration: none; outline: 2.5px solid #a084e8; outline-offset: 2px; transition: background 0.2s;">Mira nuestro proyecto actual</a>
+                            </div>
+                        </div>
+                    `;
+                    modalContent.appendChild(dynamicDiv);
+                    modalOverlay.classList.add('active');
+                    if (geoparkImg) geoparkImg.style.opacity = '0.3';
+                });
+            }
+            // Funcionalidad personalizada para el botón Contactanos
+            if (contactanosBtn) {
+                contactanosBtn.addEventListener('click', function() {
+                    // Limpiar el modal
+                    modalContent.querySelectorAll('.modal-dynamic').forEach(e => e.remove());
+                    // Crear el contenido personalizado del formulario
+                    const dynamicDiv = document.createElement('div');
+                    dynamicDiv.classList.add('modal-dynamic');
+                    dynamicDiv.innerHTML = `
+                        <div class="panel-content">
+                            <h2 style="text-align:center; color: var(--color-secondary);">Contáctanos</h2>
+                            <form class="contact-form" id="modal-contact-form">
+                                <div class="form-group">
+                                    <label for="modal-name">Nombre</label>
+                                    <input type="text" id="modal-name" name="modal-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="modal-position">Cargo dentro de la empresa</label>
+                                    <input type="text" id="modal-position" name="modal-position" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="modal-question">Duda / Recomendación</label>
+                                    <textarea id="modal-question" name="modal-question" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="modal-email">Tu correo</label>
+                                    <input type="email" id="modal-email" name="modal-email" required>
+                                </div>
+                                <button type="submit" class="submit-btn">Enviar</button>
+                            </form>
+                        </div>
+                    `;
+                    modalContent.appendChild(dynamicDiv);
+                    modalOverlay.classList.add('active');
+                    if (geoparkImg) geoparkImg.style.opacity = '0.3';
+                    // Lógica para enviar el formulario desde el modal
+                    const modalContactForm = document.getElementById('modal-contact-form');
+                    if (modalContactForm) {
+                        modalContactForm.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const emailInput = document.getElementById('modal-email');
+                            const email = emailInput.value.trim();
+                            // Validar correo corporativo GeoPark
+                            if (!email.endsWith('@ext.geo-park.com')) {
+                                confirmationMessage.textContent = 'Por favor, ingresa tu correo corporativo de GeoPark (terminado en @ext.geo-park.com) para poder contactarte.';
+                                confirmationPopup.classList.add('active');
+                                overlayBackdrop.classList.add('active');
+                                emailInput.focus();
+                                return;
+                            }
+                            // Enviar correo real usando EmailJS
+                            const name = document.getElementById('modal-name').value;
+                            const position = document.getElementById('modal-position').value;
+                            const question = document.getElementById('modal-question').value;
+                            emailjs.send('service_kpmusxn', 'template_tm839kn', {
+                                name: name,
+                                title: question,
+                                position: position,
+                                email: email
+                            })
+                            .then(function(response) {
+                                modalOverlay.classList.remove('active');
+                                if (geoparkImg) geoparkImg.style.opacity = '1';
+                                confirmationMessage.textContent = '¡Tu correo fue enviado exitosamente! Pronto recibirás una respuesta de nuestro equipo.';
+                                confirmationPopup.classList.add('active');
+                                overlayBackdrop.classList.add('active');
+                            }, function(error) {
+                                modalOverlay.classList.remove('active');
+                                if (geoparkImg) geoparkImg.style.opacity = '1';
+                                confirmationMessage.textContent = 'Ocurrió un error al enviar el correo. Intenta de nuevo más tarde.';
+                                confirmationPopup.classList.add('active');
+                                overlayBackdrop.classList.add('active');
+                            });
+                        });
+                    }
+                });
+            }
+            // Cerrar el pop-up de confirmación
+            confirmationClose.addEventListener('click', () => {
+                confirmationPopup.classList.remove('active');
+                overlayBackdrop.classList.remove('active');
+            });
+            // Cerrar el modal de contacto
+            contactModalClose.addEventListener('click', () => {
+                contactModalOverlay.classList.remove('active');
+                if (geoparkImg) geoparkImg.style.opacity = '1';
+            });
+            contactModalOverlay.addEventListener('click', (e) => {
+                if (e.target === contactModalOverlay) {
+                    contactModalOverlay.classList.remove('active');
+                    if (geoparkImg) geoparkImg.style.opacity = '1';
+                }
+            });
+            // Cerrar el modal del Agente GPT
+            aiAgentModalClose.addEventListener('click', () => {
+                aiAgentModalOverlay.classList.remove('active');
+                if (geoparkImg) geoparkImg.style.opacity = '1';
+            });
+            aiAgentModalOverlay.addEventListener('click', (e) => {
+                if (e.target === aiAgentModalOverlay) {
+                    aiAgentModalOverlay.classList.remove('active');
+                    if (geoparkImg) geoparkImg.style.opacity = '1';
+                }
+            });
+            // ...existing code...
+
+            // ...existing code...
+
+            // ...existing code...
+
+            // ...existing code...
+
+            // ...existing code...
+        });
+        // ...existing code...
+    </script>
+</body>
+</html>

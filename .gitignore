@@ -1,0 +1,10 @@
+# Archivos y carpetas a ignorar por git
+.DS_Store
+node_modules/
+dist/
+build/
+.env
+*.log
+*.tmp
+.idea/
+.vscode/
