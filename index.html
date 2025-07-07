@@ -326,8 +326,12 @@
           transition: box-shadow 0.2s, background 0.2s;
         }
         /* --- FIN BLOQUES INTERACTIVOS AUTONOM-IA --- */
-        body, h1, h2, h3, h4, h5, h6, p, ul, li, a, footer, .header-content, .equipo {
+        body, h1, h2, h3, h4, h5, h6, p, ul, li, a, footer, .header-content, .equipo, button, input, textarea, span, div {
             font-family: 'Lucida Sans', 'Lato', Arial, sans-serif !important;
+        }
+        
+        p, li, .panel-content, .modal-content p, .modal-content li {
+            text-align: justify !important;
         }
         html {
             background: linear-gradient(135deg, #a084e8 0%, #1a237e 100%);
@@ -624,6 +628,7 @@
             opacity: 1;
             transform: none;
             min-height: 0;
+            text-align: justify;
         }
         .equipo {
             margin-top: 30px;
@@ -1324,7 +1329,7 @@
             <img src="Dale AutonomIA a tu mente..png" alt="Logo AutonomIA" class="logo">
             <img src="GeoPark.png" alt="Logo GeoPark" class="logo-geopark">
             <div class="header-content" style="display: flex; flex-direction: column; align-items: center;">
-                <h1>Autonom-IA <span class="header-title-geopark">- Hackers de</span> GeoPark</h1>
+                <h1>AutonomIA <span class="header-title-geopark">- Hackers de</span> GeoPark</h1>
                 <p>Dale <span class="main-phrase-autonomia">AutonomIA</span> a tu mente</p>
             </div>
             <div class="header-actions">
@@ -1380,20 +1385,20 @@
         <div class="micro-hacks-container">
             <div class="micro-hack-card" tabindex="0">
                 <div class="micro-hack-card-inner">
-                    <div class="micro-hack-card-front">Automatiza tu reporte semanal en 1 click</div>
-                    <div class="micro-hack-card-back">Crea un flujo en Power Automate que recoja tus datos y los envíe automáticamente cada viernes.</div>
+                                         <div class="micro-hack-card-front" style="font-family: 'Lucida Sans', 'Lato', Arial, sans-serif; text-align: center;">Automatiza tu reporte semanal en 1 click</div>
+                     <div class="micro-hack-card-back" style="font-family: 'Lucida Sans', 'Lato', Arial, sans-serif; text-align: justify;">Crea un flujo en Power Automate que recoja tus datos y los envíe automáticamente cada viernes.</div>
                 </div>
             </div>
             <div class="micro-hack-card" tabindex="0">
                 <div class="micro-hack-card-inner">
-                    <div class="micro-hack-card-front">Integra IA en tus flujos de aprobación</div>
-                    <div class="micro-hack-card-back">Usa un modelo de IA para sugerir aprobaciones automáticas según criterios históricos.</div>
+                                         <div class="micro-hack-card-front" style="font-family: 'Lucida Sans', 'Lato', Arial, sans-serif; text-align: center;">Integra IA en tus flujos de aprobación</div>
+                     <div class="micro-hack-card-back" style="font-family: 'Lucida Sans', 'Lato', Arial, sans-serif; text-align: justify;">Usa un modelo de IA para sugerir aprobaciones automáticas según criterios históricos.</div>
                 </div>
             </div>
             <div class="micro-hack-card" tabindex="0">
                 <div class="micro-hack-card-inner">
-                    <div class="micro-hack-card-front">Ahorra 10 horas al mes con Power Automate</div>
-                    <div class="micro-hack-card-back">Automatiza tareas repetitivas y recibe un resumen mensual del tiempo ahorrado.</div>
+                                         <div class="micro-hack-card-front" style="font-family: 'Lucida Sans', 'Lato', Arial, sans-serif; text-align: center;">Ahorra 10 horas al mes con Power Automate</div>
+                     <div class="micro-hack-card-back" style="font-family: 'Lucida Sans', 'Lato', Arial, sans-serif; text-align: justify;">Automatiza tareas repetitivas y recibe un resumen mensual del tiempo ahorrado.</div>
                 </div>
             </div>
         </div>
@@ -1402,8 +1407,9 @@
         <section class="equipo-perfil-wrapper" style="display: flex; flex-direction: row; align-items: flex-start; gap: 64px; margin-top: 200px;">
           <div class="equipo-perfil-marco outline-figura" style="width: 300px; height: 480px; min-width: 220px; position: relative; padding: 0 12px; display: flex; align-items: center; justify-content: center; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px rgba(26,35,126,0.10); overflow: hidden;">
             <div class="outline-figura-outer"></div>
-            <img id="perfil-img" src="primer-plano-guapo-joven-hombre-negocios-moderno-traje-sonriente-posicion-contra-fondo-blanco_1258-64864.avif" alt="Foto perfil individual" style="width: calc(100% - 24px); height: calc(100% - 24px); object-fit: cover; object-position: center top; border-radius: 12px; box-shadow: 0 2px 12px rgba(160,132,232,0.10); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 4; background: #fff; opacity: 1; transition: opacity 0.5s;" />
-            <img id="perfil-img-2" src="istockphoto-455586203-612x612.jpg" alt="Foto perfil equipo" style="width: calc(100% - 24px); height: calc(100% - 24px); object-fit: cover; object-position: center top; border-radius: 12px; box-shadow: 0 2px 12px rgba(160,132,232,0.10); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 3; background: #fff; opacity: 0; transition: opacity 0.5s;" />
+            <div id="perfil-imgs-container">
+              <!-- Las imágenes de perfil se cargarán dinámicamente aquí -->
+            </div>
             <div class="outline-figura-gradient-between"></div>
             <div class="outline-figura-inner"></div>
           </div>
@@ -1411,8 +1417,8 @@
           <div class="perfil-word-box" id="perfil-word-box" style="background: linear-gradient(135deg, #ffffff 0%, #f4f1fc 40%, #e6dffa 70%, #d8c9ff 100%); box-shadow: 0 8px 40px rgba(26,35,126,0.10); border-radius: 16px; padding: 38px 44px 38px 44px; min-width: 340px; max-width: 420px; margin-left: 0; display: flex; flex-direction: column; gap: 18px; border: 1.5px solid #a084e8;">
             <h2 id="perfil-nombre" style="color: #1a237e; font-size: 2.1em; font-weight: bold; margin: 0 0 8px 0; letter-spacing: 0.5px;">Nombre</h2>
             <h3 id="perfil-titulo" style="color: #6a39af; font-size: 1.2em; font-weight: 600; margin: 0 0 18px 0; letter-spacing: 0.2px;">Perfil</h3>
-            <p id="perfil-descripcion" style="color: #222; font-size: 1.08em; line-height: 1.7; margin: 0;">
-              Apasionado por la innovación y la tecnología, disfruta de resolver retos complejos y automatizar procesos. Le encanta el café, la música indie y explorar nuevas herramientas de IA. En su tiempo libre, juega ajedrez, viaja y comparte hacks de productividad con su equipo. Cree que la creatividad y la eficiencia pueden ir siempre de la mano.
+            <p id="perfil-descripcion" style="color: #222; font-size: 1.08em; line-height: 1.7; margin: 0; text-align: justify; font-family: 'Lucida Sans', 'Lato', Arial, sans-serif;">
+              (en proceso)
             </p>
           </div>
           <!-- Rectángulo secundario (foto grupal) -->
@@ -1423,8 +1429,8 @@
           <div class="equipo-perfil-rect-secundario outline-figura" style="width: 1200px; height: 500px; min-width: 220px; position: relative; padding: 0 12px; display: flex; align-items: center; justify-content: center; background: transparent; border-radius: 18px; box-shadow: none; overflow: visible; pointer-events: none;">
             <div class="outline-figura-outer"></div>
             <!-- Solo debe ir la imagen grupal del equipo AutonomIA aquí -->
-            <img id="equipo-img-grupal" src="equipo imagen.jpg" alt="Foto grupal equipo AutonomIA" style="width: 90%; height: 90%; object-fit: cover; object-position: center; border-radius: 14px; box-shadow: 0 2px 12px rgba(160,132,232,0.10); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; background: #fff; transition: filter 0.2s; border: none; padding: 0; display: block; outline: none; pointer-events: auto;" aria-describedby="equipo-grupal-learn-btn" />
-            <button id="equipo-grupal-learn-btn" type="button" style="display: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 10; background: linear-gradient(90deg, #a084e8 0%, #6a39af 100%); color: #fff; font-size: 1.35em; font-weight: bold; border: none; border-radius: 12px; padding: 22px 48px; box-shadow: 0 4px 24px rgba(26,35,126,0.18); cursor: pointer; transition: background 0.2s, opacity 0.2s; opacity: 0.96; outline: none; pointer-events: auto;" aria-haspopup="dialog" aria-expanded="false">Aprende más sobre nosotros</button>
+            <img id="equipo-img-grupal" src="Foto Grupal.jpeg" alt="Foto grupal equipo AutonomIA" style="width: 90%; height: 90%; object-fit: cover; object-position: center; border-radius: 14px; box-shadow: 0 2px 12px rgba(160,132,232,0.10); position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; background: #fff; transition: opacity 0.3s ease, filter 0.3s ease; border: none; padding: 0; display: block; outline: none; pointer-events: auto;" aria-describedby="equipo-grupal-learn-btn" />
+            <button id="equipo-grupal-learn-btn" type="button" style="display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 100; background: linear-gradient(90deg, #a084e8 0%, #6a39af 100%); color: #fff; font-size: 1.35em; font-weight: bold; border: none; border-radius: 12px; padding: 22px 48px; box-shadow: 0 4px 24px rgba(26,35,126,0.18); cursor: pointer; transition: opacity 0.3s ease; opacity: 0; outline: none; pointer-events: auto;" aria-haspopup="dialog" aria-expanded="false">Aprende más sobre nosotros</button>
             <style>
             /* --- ESTILOS PARA EL BOTÓN SOBRE LA IMAGEN GRUPAL --- */
             #equipo-grupal-learn-btn:focus {
@@ -1437,6 +1443,23 @@
             }
             #equipo-grupal-learn-btn:active {
                 filter: brightness(0.95);
+            }
+            /* Estilos para la animación de hover en la imagen grupal */
+            .equipo-perfil-rect-secundario:hover #equipo-img-grupal {
+                opacity: 0.4 !important;
+                filter: brightness(0.7) !important;
+            }
+            .equipo-perfil-rect-secundario:hover #equipo-grupal-learn-btn {
+                opacity: 1 !important;
+                visibility: visible;
+            }
+            /* Asegurarse de que el botón esté siempre por encima */
+            #equipo-grupal-learn-btn {
+                visibility: hidden;
+            }
+            .equipo-perfil-rect-secundario {
+                position: relative;
+                z-index: 5;
             }
             @media (max-width: 900px) {
                 #equipo-grupal-learn-btn {
@@ -1478,80 +1501,80 @@
         
 
         <!-- Panel Que somos -->
-        <div class="panel" id="panel-1" role="region" style="display: none;"><div class="panel-content">
-            <h3>¿Qué somos?</h3>
-            <p>Somos un equipo de <strong>IA Hackers</strong> en GeoPark, apasionados por la automatización, la inteligencia artificial y el rediseño de procesos. Nuestra misión es transformar la manera en que trabajamos, liberando tiempo y potenciando el criterio de las personas a través de soluciones tecnológicas innovadoras.</p>
-            <ul>
-                <li>Cuestionamos lo obvio y proponemos lo audaz.</li>
-                <li>Rediseñamos procesos antes de automatizarlos.</li>
-                <li>Buscamos impacto real y medible en la organización.</li>
-                <li>Creemos que la tecnología potencia, no reemplaza, el talento humano.</li>
-            </ul>
-            <p>En AutonomIA, no solo automatizamos tareas: creamos una nueva forma de pensar y trabajar, donde la eficiencia y la creatividad van de la mano.</p>
-        </div></div>
+                  <div class="panel" id="panel-1" role="region" style="display: none;"><div class="panel-content">
+              <h3>¿Qué somos?</h3>
+              <p style="text-align: justify;">Somos un equipo de <strong>IA Hackers</strong> en GeoPark, apasionados por la automatización, la inteligencia artificial y el rediseño de procesos. Nuestra misión es transformar la manera en que trabajamos, liberando tiempo y potenciando el criterio de las personas a través de soluciones tecnológicas innovadoras.</p>
+              <ul>
+                 <li style="text-align: justify;">Cuestionamos lo obvio y proponemos lo audaz.</li>
+                 <li style="text-align: justify;">Rediseñamos procesos antes de automatizarlos.</li>
+                 <li style="text-align: justify;">Buscamos impacto real y medible en la organización.</li>
+                 <li style="text-align: justify;">Creemos que la tecnología potencia, no reemplaza, el talento humano.</li>
+              </ul>
+              <p style="text-align: justify;">En AutonomIA, no solo automatizamos tareas: creamos una nueva forma de pensar y trabajar, donde la eficiencia y la creatividad van de la mano.</p>
+          </div></div>
         
             
             
-            <div class="panel" id="panel-2" role="region" style="display: none;"><div class="panel-content">
-                <h3>IA Hackers (los chicos)</h3>
-                <p>Jóvenes con hambre de impacto y talento para materializar ideas en soluciones funcionales en tiempo récord. Dominan herramientas como Power Automate, LangChain, Zapier, Cursor o las que el reto requiera. Les apasiona explorar, romper y reconstruir. Detectan patrones, rediseñan procesos y conectan piezas que antes no se comunicaban. Son agentes de cambio que entienden que la tecnología no reemplaza a las personas: potencia su criterio.</p>
-                <h3>IA Hacker LEAD</h3>
-                <p>El equipo es liderado con una visión estratégica, acompañando desde la priorización, la gestión de valor y la conexión con los desafíos reales del negocio. El rol del liderazgo no es ser el más técnico, sino asegurar que cada IA Hacker tenga claridad, foco, contexto y el espacio necesario para experimentar, fallar rápido, aprender más rápido y escalar soluciones con impacto. Esta guía permite que la creatividad se transforme en resultados concretos y visibles.</p>
-            </div></div>
+                          <div class="panel" id="panel-2" role="region" style="display: none;"><div class="panel-content">
+                  <h3>IA Hackers (los chicos)</h3>
+                  <p style="text-align: justify;">Jóvenes con hambre de impacto y talento para materializar ideas en soluciones funcionales en tiempo récord. Dominan herramientas como Power Automate, LangChain, Zapier, Cursor o las que el reto requiera. Les apasiona explorar, romper y reconstruir. Detectan patrones, rediseñan procesos y conectan piezas que antes no se comunicaban. Son agentes de cambio que entienden que la tecnología no reemplaza a las personas: potencia su criterio.</p>
+                  <h3>IA Hacker LEAD</h3>
+                  <p style="text-align: justify;">El equipo es liderado con una visión estratégica, acompañando desde la priorización, la gestión de valor y la conexión con los desafíos reales del negocio. El rol del liderazgo no es ser el más técnico, sino asegurar que cada IA Hacker tenga claridad, foco, contexto y el espacio necesario para experimentar, fallar rápido, aprender más rápido y escalar soluciones con impacto. Esta guía permite que la creatividad se transforme en resultados concretos y visibles.</p>
+              </div></div>
             
-            <div class="panel" id="panel-3" role="region" style="display: none;"><div class="panel-content">
-                <p>Queremos que GeoPark piense y actúe como una organización 2.5x más productiva. Para eso, no nos limitamos a automatizar lo que ya existe: repensamos desde la raíz. Cuestionamos lo obvio, proponemos lo audaz y nos enfocamos en lo que realmente genera valor.</p>
-                <p>Donde haya ineficiencia, intervenimos. Donde un proceso se estanca, lo reimaginamos. Donde alguien dice «esto siempre se ha hecho así», nosotros preguntamos «¿y si lo hiciéramos diferente?»</p>
-            </div></div>
+                          <div class="panel" id="panel-3" role="region" style="display: none;"><div class="panel-content">
+                  <p style="text-align: justify;">Queremos que GeoPark piense y actúe como una organización 2.5x más productiva. Para eso, no nos limitamos a automatizar lo que ya existe: repensamos desde la raíz. Cuestionamos lo obvio, proponemos lo audaz y nos enfocamos en lo que realmente genera valor.</p>
+                  <p style="text-align: justify;">Donde haya ineficiencia, intervenimos. Donde un proceso se estanca, lo reimaginamos. Donde alguien dice «esto siempre se ha hecho así», nosotros preguntamos «¿y si lo hiciéramos diferente?»</p>
+              </div></div>
+              
+              <div class="panel" id="panel-4" role="region" style="display: none;"><div class="panel-content">
+                  <p style="text-align: justify;">No queremos pasar desapercibidos. Cuando trabajamos en un flujo, cuando prototipamos en tiempo récord, cuando una solución ahorra horas o eleva el criterio de decisión, queremos que se sepa que fue obra del equipo. Somos IA Hackers y queremos que se note.</p>
+                  <p style="text-align: justify;">No por ego, sino porque representamos una nueva manera de pensar y trabajar. Nuestro estilo es directo, curioso y valiente. Queremos que donde vayamos, se reconozca una actitud: la de quien no acepta lo establecido, la de quien ve el futuro en cada proceso y lo acerca al presente con inteligencia, criterio y tecnología.</p>
+              </div></div>
             
-            <div class="panel" id="panel-4" role="region" style="display: none;"><div class="panel-content">
-                <p>No queremos pasar desapercibidos. Cuando trabajamos en un flujo, cuando prototipamos en tiempo récord, cuando una solución ahorra horas o eleva el criterio de decisión, queremos que se sepa que fue obra del equipo. Somos IA Hackers y queremos que se note.</p>
-                <p>No por ego, sino porque representamos una nueva manera de pensar y trabajar. Nuestro estilo es directo, curioso y valiente. Queremos que donde vayamos, se reconozca una actitud: la de quien no acepta lo establecido, la de quien ve el futuro en cada proceso y lo acerca al presente con inteligencia, criterio y tecnología.</p>
-            </div></div>
+                          <div class="panel" id="panel-5" role="region" style="display: none;"><div class="panel-content">
+                  <h3>Misión</h3>
+                  <p style="text-align: justify;">Impulsar una nueva forma de trabajar en GeoPark, donde la tecnología, la automatización y la IA se integren naturalmente a procesos rediseñados desde la raíz, promoviendo un cambio de mentalidad que eleve el criterio, la agilidad y el impacto hacia una organización 2,5x más productiva.</p>
+                  <h3>Visión</h3>
+                  <p style="text-align: justify;">Ser catalizadores del cambio cultural en GeoPark, promoviendo una mentalidad donde la eficiencia, el rediseño inteligente y el uso de tecnología sean la norma. Acompañar a las personas para trabajar con más criterio, menos fricción y mayor impacto, construyendo una organización ágil, enfocada y preparada para el futuro.</p>
+                  <h3>Objetivos del Equipo</h3>
+                  <ul>
+                     <li style="text-align: justify;">Transformar con impacto real.<br>Rediseñar procesos clave antes de automatizarlos, centrados en el valor.<br>Identificar y acompañar oportunidades de alto impacto para liberar tiempo y aumentar la productividad.</li>
+                     <li style="text-align: justify;">Impulsar una cultura de pensamiento tecnológico.<br>Promover la eficiencia y el rediseño como parte del día a día.<br>Elevar el criterio en la toma de decisiones con IA y automatización.</li>
+                     <li style="text-align: justify;">Experimentar y escalar con velocidad.<br>Prototipar en días usando herramientas como Power Automate, LangChain, Zapier, n8n.<br>Fomentar el aprendizaje rápido y el intercambio de hacks y buenas prácticas.</li>
+                     <li style="text-align: justify;">Usar la tecnología con responsabilidad.<br>Asegurar el uso ético y transparente de datos, IA y automatizaciones.</li>
+                  </ul>
+              </div></div>
             
-            <div class="panel" id="panel-5" role="region" style="display: none;"><div class="panel-content">
-                <h3>Misión</h3>
-                <p>Impulsar una nueva forma de trabajar en GeoPark, donde la tecnología, la automatización y la IA se integren naturalmente a procesos rediseñados desde la raíz, promoviendo un cambio de mentalidad que eleve el criterio, la agilidad y el impacto hacia una organización 2,5x más productiva.</p>
-                <h3>Visión</h3>
-                <p>Ser catalizadores del cambio cultural en GeoPark, promoviendo una mentalidad donde la eficiencia, el rediseño inteligente y el uso de tecnología sean la norma. Acompañar a las personas para trabajar con más criterio, menos fricción y mayor impacto, construyendo una organización ágil, enfocada y preparada para el futuro.</p>
-                <h3>Objetivos del Equipo</h3>
-                <ul>
-                    <li>Transformar con impacto real.<br>Rediseñar procesos clave antes de automatizarlos, centrados en el valor.<br>Identificar y acompañar oportunidades de alto impacto para liberar tiempo y aumentar la productividad.</li>
-                    <li>Impulsar una cultura de pensamiento tecnológico.<br>Promover la eficiencia y el rediseño como parte del día a día.<br>Elevar el criterio en la toma de decisiones con IA y automatización.</li>
-                    <li>Experimentar y escalar con velocidad.<br>Prototipar en días usando herramientas como Power Automate, LangChain, Zapier, n8n.<br>Fomentar el aprendizaje rápido y el intercambio de hacks y buenas prácticas.</li>
-                    <li>Usar la tecnología con responsabilidad.<br>Asegurar el uso ético y transparente de datos, IA y automatizaciones.</li>
-                </ul>
-            </div></div>
-            
-            <div class="panel" id="panel-6" role="region" style="display: none;"><div class="panel-content">
-                <p>Estas solo son algunas de las frases que nos representan y que nos repetimos constantemente en búsqueda de mejorar el espacio laboral donde compartimos con nuestros compañeros de trabajo, y recordarnos por qué hacemos esto en primer lugar.</p>
-                <h3>Cambio de mentalidad</h3>
-                <ul>
-                    <li>Primero pensamos, luego automatizamos.</li>
-                    <li>No se trata de hacer lo mismo más rápido, sino de hacer lo correcto de forma más inteligente.</li>
-                    <li>El criterio no se automatiza, se eleva.</li>
-                    <li>Tecnología con propósito, no por moda.</li>
-                </ul>
-                <h3>Velocidad con sentido</h3>
-                <ul>
-                    <li>De idea a valor en días, no en semanas.</li>
-                    <li>De lunes a prototipo, a viernes en producción.</li>
-                    <li>Fallamos rápido, aprendemos más rápido.</li>
-                    <li>Del insight al impacto en tiempo récord.</li>
-                </ul>
-                <h3>Foco en lo que importa</h3>
-                <ul>
-                    <li>Automatizamos lo que molesta, optimizamos lo que importa.</li>
-                    <li>Menos tareas repetitivas, más impacto real.</li>
-                    <li>Reducción de horas-hombre, aumento de valor estratégico.</li>
-                    <li>No digitalizamos la ineficiencia: la rediseñamos.</li>
-                </ul>
-                <h3>Responsabilidad y confianza</h3>
-                <ul>
-                    <li>La confianza no se programa: se construye con tecnología responsable.</li>
-                    <li>La IA no reemplaza personas, potencia su impacto.</li>
-                </ul>
-            </div></div>
+                          <div class="panel" id="panel-6" role="region" style="display: none;"><div class="panel-content">
+                  <p style="text-align: justify;">Estas solo son algunas de las frases que nos representan y que nos repetimos constantemente en búsqueda de mejorar el espacio laboral donde compartimos con nuestros compañeros de trabajo, y recordarnos por qué hacemos esto en primer lugar.</p>
+                  <h3>Cambio de mentalidad</h3>
+                  <ul>
+                     <li style="text-align: justify;">Primero pensamos, luego automatizamos.</li>
+                     <li style="text-align: justify;">No se trata de hacer lo mismo más rápido, sino de hacer lo correcto de forma más inteligente.</li>
+                     <li style="text-align: justify;">El criterio no se automatiza, se eleva.</li>
+                     <li style="text-align: justify;">Tecnología con propósito, no por moda.</li>
+                  </ul>
+                  <h3>Velocidad con sentido</h3>
+                  <ul>
+                     <li style="text-align: justify;">De idea a valor en días, no en semanas.</li>
+                     <li style="text-align: justify;">De lunes a prototipo, a viernes en producción.</li>
+                     <li style="text-align: justify;">Fallamos rápido, aprendemos más rápido.</li>
+                     <li style="text-align: justify;">Del insight al impacto en tiempo récord.</li>
+                  </ul>
+                  <h3>Foco en lo que importa</h3>
+                  <ul>
+                     <li style="text-align: justify;">Automatizamos lo que molesta, optimizamos lo que importa.</li>
+                     <li style="text-align: justify;">Menos tareas repetitivas, más impacto real.</li>
+                     <li style="text-align: justify;">Reducción de horas-hombre, aumento de valor estratégico.</li>
+                     <li style="text-align: justify;">No digitalizamos la ineficiencia: la rediseñamos.</li>
+                  </ul>
+                  <h3>Responsabilidad y confianza</h3>
+                  <ul>
+                     <li style="text-align: justify;">La confianza no se programa: se construye con tecnología responsable.</li>
+                     <li style="text-align: justify;">La IA no reemplaza personas, potencia su impacto.</li>
+                  </ul>
+              </div></div>
             
             
         </div>
@@ -1629,9 +1652,9 @@
             </div>
             <div class="ai-agent-modal-body">
                 <div class="ai-agent-placeholder">
-                    <p>Nuestro agente de IA está diseñado para responder tus preguntas sobre automatización, inteligencia artificial y cómo AutonomIA puede ayudarte en GeoPark.</p>
-                    <p>Por el momento, te redirigiremos a ChatGPT. En el futuro, contaremos con nuestro propio agente especializado.</p>
-                    <a href="https://chat.openai.com" target="_blank" class="ai-agent-btn-large">
+                    <p style="text-align: justify; font-family: 'Lucida Sans', 'Lato', Arial, sans-serif;">Nuestro agente de IA está diseñado para responder tus preguntas sobre automatización, inteligencia artificial y cómo AutonomIA puede ayudarte en GeoPark.</p>
+                    <p style="text-align: justify; font-family: 'Lucida Sans', 'Lato', Arial, sans-serif;">Por el momento, te redirigiremos a ChatGPT. En el futuro, contaremos con nuestro propio agente especializado.</p>
+                    <a href="https://chatgpt.com/g/g-68487c6c84a48191b08e63a3cd6b6199-contador-de-compensacion-de-proveedores-dev" target="_blank" class="ai-agent-btn-large">
                         <span>Ir a ChatGPT</span>
                         <span class="ai-icon">→</span>
                     </a>
@@ -1655,42 +1678,46 @@
         const equipoDescripcion = `
           <div class="panel-content">
             <h2 style="text-align:center; color: #fff; background: #a084e8; padding: 10px 24px; border-radius: 10px; width: fit-content; margin: 0 auto 30px auto; font-weight: bold; box-shadow: 0 2px 8px rgba(160,132,232,0.10);">Mira un poco más sobre nosotros</h2>
-            <p style="font-size: 1.08em; line-height: 1.45; margin-bottom: 0; color: #222; max-width: 820px; min-width: 320px; width: 100%; margin-left: auto; margin-right: auto; word-break: break-word; hyphens: auto;">
+            <p style="font-size: 1.08em; line-height: 1.45; margin-bottom: 0; color: #222; max-width: 820px; min-width: 320px; width: 100%; margin-left: auto; margin-right: auto; word-break: break-word; hyphens: auto; text-align: justify; font-family: 'Lucida Sans', 'Lato', Arial, sans-serif;">
               <strong>AutonomIA</strong> Buscamos automatizar por automatizar. Nuestra brújula es la curiosidad, nuestra gasolina es la incomodidad frente a lo ineficiente, y nuestra cultura es la de quienes preguntan <em>“¿por qué no?”</em>. Cada flujo que diseñamos, cada línea de código, cada integración es un intento por romper la fricción: entre tareas, entre sistemas y, sobre todo, entre las personas y la tecnología. Aquí no hay recetas, hay experimentación; no hay miedo al error, hay obsesión por el aprendizaje. <strong>Fallamos rápido, aprendemos aún más rápido</strong><br>
               ¿El objetivo? Dejar huella en la forma de trabajar de GeoPark. Mostrar que la inteligencia artificial puede ser tan humana como útil y que la innovación, lejos de ser un área, puede ser una actitud diaria.
             </p>
           </div>
         `;
         if (imgGrupal && btnLearn && modalOverlay && modalContent && modalClose) {
-          // --- Mostrar botón solo en hover/focus de la imagen ---
-          function showBtn() {
-            btnLearn.style.display = 'block';
-            btnLearn.style.opacity = '0.96';
-          }
-          function hideBtn() {
-            btnLearn.style.display = 'none';
-            btnLearn.style.opacity = '0';
-          }
-          imgGrupal.addEventListener('mouseenter', showBtn);
-          imgGrupal.addEventListener('mouseleave', function(e) {
-            // Si el mouse entra al botón, no ocultar
-            if (!btnLearn.contains(e.relatedTarget)) hideBtn();
-          });
-          btnLearn.addEventListener('mouseenter', showBtn);
-          btnLearn.addEventListener('mouseleave', function(e) {
-            // Si el mouse vuelve a la imagen, no ocultar
-            if (!imgGrupal.contains(e.relatedTarget)) hideBtn();
-          });
           // Accesibilidad: mostrar botón al enfocar la imagen
-          imgGrupal.addEventListener('focus', showBtn);
-          imgGrupal.addEventListener('blur', function(e) {
-            // Si el foco va al botón, no ocultar
-            if (e.relatedTarget !== btnLearn) hideBtn();
+          imgGrupal.addEventListener('focus', function() {
+            imgGrupal.style.opacity = '0.4';
+            imgGrupal.style.filter = 'brightness(0.7)';
+            btnLearn.style.opacity = '1';
+            btnLearn.style.visibility = 'visible';
           });
-          btnLearn.addEventListener('focus', showBtn);
+          
+          imgGrupal.addEventListener('blur', function(e) {
+            // Si el foco va al botón, no restaurar la imagen
+            if (e.relatedTarget !== btnLearn) {
+              imgGrupal.style.opacity = '1';
+              imgGrupal.style.filter = '';
+              btnLearn.style.opacity = '0';
+              // No ocultamos con visibility para permitir que el CSS de hover funcione
+            }
+          });
+          
+          btnLearn.addEventListener('focus', function() {
+            imgGrupal.style.opacity = '0.4';
+            imgGrupal.style.filter = 'brightness(0.7)';
+            btnLearn.style.opacity = '1';
+            btnLearn.style.visibility = 'visible';
+          });
+          
           btnLearn.addEventListener('blur', function(e) {
-            // Si el foco vuelve a la imagen, no ocultar
-            if (e.relatedTarget !== imgGrupal) hideBtn();
+            // Si el foco vuelve a la imagen, no restaurar
+            if (e.relatedTarget !== imgGrupal) {
+              imgGrupal.style.opacity = '1';
+              imgGrupal.style.filter = '';
+              btnLearn.style.opacity = '0';
+              // No ocultamos con visibility para permitir que el CSS de hover funcione
+            }
           });
           // --- Abrir modal al hacer click en el botón ---
           function openEquipoModal() {
@@ -1703,6 +1730,7 @@
             modalContent.appendChild(dynamicDiv);
             modalOverlay.classList.add('active');
             btnLearn.setAttribute('aria-expanded', 'true');
+            imgGrupal.style.opacity = '0.4';
             imgGrupal.style.filter = 'brightness(0.6)';
             // Foco accesible
             setTimeout(() => {
@@ -1719,14 +1747,12 @@
               e.preventDefault();
             }
           });
-          // Permitir que la imagen también abra el modal SOLO si el botón es visible (accesibilidad)
+          // Permitir que la imagen también abra el modal
           imgGrupal.addEventListener('click', function(e) {
-            if (btnLearn.style.display === 'block') {
-              openEquipoModal();
-            }
+            openEquipoModal();
           });
           imgGrupal.addEventListener('keydown', function(e) {
-            if ((e.key === 'Enter' || e.key === ' ') && btnLearn.style.display === 'block') {
+            if (e.key === 'Enter' || e.key === ' ') {
               openEquipoModal();
               e.preventDefault();
             }
@@ -1735,7 +1761,13 @@
           function closeEquipoModal() {
             modalOverlay.classList.remove('active');
             btnLearn.setAttribute('aria-expanded', 'false');
+            
+            // Simplemente restauramos la opacidad de la imagen pero mantenemos la visibilidad del botón
+            // para que el hover CSS pueda funcionar correctamente
+            imgGrupal.style.opacity = '1';
             imgGrupal.style.filter = '';
+            btnLearn.style.opacity = '0';
+            
             // Devolver foco accesible
             setTimeout(() => {
               btnLearn.focus();
@@ -1760,27 +1792,102 @@
         }
       });
         // --- SLIDER DE PERFILES DE EQUIPO ---
-        const perfiles = [
-          {
-            nombre: 'Alex García',
-            titulo: 'IA Hacker',
-            descripcion: 'Apasionado por la innovación y la tecnología, disfruta de resolver retos complejos y automatizar procesos. Le encanta el café, la música indie y explorar nuevas herramientas de IA. En su tiempo libre, juega ajedrez, viaja y comparte hacks de productividad con su equipo. Cree que la creatividad y la eficiencia pueden ir siempre de la mano.',
-            imagen: 'primer-plano-guapo-joven-hombre-negocios-moderno-traje-sonriente-posicion-contra-fondo-blanco_1258-64864.avif'
-          },
-          {
-            nombre: 'Javier Torres',
-            titulo: 'Desarrollador de Automatización',
-            descripcion: 'Especialista en automatización de procesos y fanático de la eficiencia. Disfruta del ciclismo, la lectura de ciencia ficción y los retos de programación. Siempre busca nuevas formas de optimizar el trabajo en equipo y automatizar tareas repetitivas.',
-            imagen: 'istockphoto-455586203-612x612.jpg'
-          }
+        // Nombres de archivos de imágenes WhatsApp
+        const imagenesWhatsApp = [
+          'WhatsApp Image 2025-07-04 at 8.37.16 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.16 PM (1).jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.17 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.18 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.18 PM (1).jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.19 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.20 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.21 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.37.22 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.38.50 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.38.51 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.38.52 PM.jpeg',
+          'WhatsApp Image 2025-07-04 at 8.38.53 PM.jpeg'
         ];
-        let perfilActual = 0;
-        const perfilImg1 = document.getElementById('perfil-img');
-        const perfilImg2 = document.getElementById('perfil-img-2');
-        // Asegúrate de que la segunda imagen tenga el src correcto
-        if (perfilImg2) {
-          perfilImg2.src = 'istockphoto-455586203-612x612.jpg';
+        
+        // Títulos ficticios para los perfiles
+        const titulosPerfiles = [
+          'IA Hacker',
+          'IA Hacker',
+          'IA Hacker',
+          'IA Hacker',
+          'IA Hacker',
+          'IA Hacker',
+          'Lider IA Hacker',
+          'IA Hacker',
+          'IA Hacker',
+          'Senior IA Hacker',
+          'IA Hacker',
+          'IA Hacker',
+          'IA Hacker'
+        ];
+        
+        // Nombres ficticios para los perfiles
+        const nombresPerfiles = [
+          'Antonio Muñoz Arcieri',
+          'Santiago Seade Rachedell',
+          'Diego Andrés Cubillos Martinez',
+          'Andrés Felipe Borbon Sierra',
+          'Javier Alexander Gómez Morgan',
+          'Martin Puentes Galindo',
+          'Dylan Torres Rodríguez',
+          'Laura Sarita Gallego Martinez',
+          'Sara Daniela Bastidas Burgos',
+          'Andrés Felipe Mendez Arenas',
+          'Javier Daniel Alturo Diaz',
+          'Juan Sebastian Galindo Jaime',
+          'Andrés David Neira Eslava'
+        ];
+        
+        // Crear array de perfiles combinando la información
+        const perfiles = [];
+        for (let i = 0; i < imagenesWhatsApp.length; i++) {
+          perfiles.push({
+            nombre: nombresPerfiles[i % nombresPerfiles.length],
+            titulo: titulosPerfiles[i % titulosPerfiles.length],
+            descripcion: '(en proceso)',
+            imagen: imagenesWhatsApp[i]
+          });
         }
+        
+        // Crear elementos de imagen dinámicamente
+        const perfilImgsContainer = document.getElementById('perfil-imgs-container');
+        if (perfilImgsContainer) {
+          // Limpiar el contenedor
+          perfilImgsContainer.innerHTML = '';
+          
+          // Crear una imagen para cada perfil
+          perfiles.forEach((perfil, index) => {
+            const img = document.createElement('img');
+            img.src = perfil.imagen;
+            img.alt = `Foto de ${perfil.nombre}`;
+            img.className = 'perfil-img';
+            img.style.cssText = `
+              width: calc(100% - 24px);
+              height: calc(100% - 24px);
+              object-fit: cover;
+              object-position: center top;
+              border-radius: 12px;
+              box-shadow: 0 2px 12px rgba(160,132,232,0.10);
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              z-index: ${index + 3};
+              background: #fff;
+              opacity: ${index === 0 ? 1 : 0};
+              transition: opacity 0.5s;
+            `;
+            img.id = `perfil-img-${index}`;
+            perfilImgsContainer.appendChild(img);
+          });
+        }
+        
+        let perfilActual = 0;
         const perfilNombre = document.getElementById('perfil-nombre');
         const perfilTitulo = document.getElementById('perfil-titulo');
         const perfilDescripcion = document.getElementById('perfil-descripcion');
@@ -1790,21 +1897,26 @@
         function mostrarPerfil(idx) {
           if (idx < 0) idx = perfiles.length - 1;
           if (idx >= perfiles.length) idx = 0;
-          // Animación de fade
-          if (perfilActual !== idx) {
-            if (perfilActual === 0) {
-              perfilImg1.style.opacity = 0;
-              perfilImg2.style.opacity = 1;
-            } else {
-              perfilImg1.style.opacity = 1;
-              perfilImg2.style.opacity = 0;
-            }
+          
+          // Ocultar todas las imágenes
+          document.querySelectorAll('.perfil-img').forEach(img => {
+            img.style.opacity = 0;
+          });
+          
+          // Mostrar la imagen actual
+          const imgActual = document.getElementById(`perfil-img-${idx}`);
+          if (imgActual) {
+            imgActual.style.opacity = 1;
           }
-          perfilNombre.textContent = perfiles[idx].nombre;
-          perfilTitulo.textContent = perfiles[idx].titulo;
-          perfilDescripcion.textContent = perfiles[idx].descripcion;
+          
+          // Actualizar texto
+          if (perfilNombre) perfilNombre.textContent = perfiles[idx].nombre;
+          if (perfilTitulo) perfilTitulo.textContent = perfiles[idx].titulo;
+          if (perfilDescripcion) perfilDescripcion.textContent = perfiles[idx].descripcion;
+          
           perfilActual = idx;
         }
+        
         if (btnPrev && btnNext) {
           btnPrev.addEventListener('click', function() {
             mostrarPerfil(perfilActual - 1);
@@ -1813,8 +1925,13 @@
             mostrarPerfil(perfilActual + 1);
           });
         }
+        
         // Inicializar
-        mostrarPerfil(0);
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(() => {
+            mostrarPerfil(0);
+          }, 100);
+        });
         document.addEventListener('DOMContentLoaded', function() {
           // Frase motivacional animada e interactiva con fade
           const frases = [
@@ -2084,7 +2201,7 @@
                             </ul>
                             <p>¿Quieres ver uno de nuestros proyectos en acción? Haz clic en el botón a continuación para conocer a nuestro agente actual.</p>
                             <div style="text-align:center; margin-top: 30px;">
-                                <a href="https://chat.openai.com" target="_blank" style="display:inline-block; background: linear-gradient(135deg, #a084e8 0%, #6a39af 100%); color: #fff; font-weight: bold; font-size: 1.1em; padding: 14px 32px; border-radius: 10px; text-decoration: none; outline: 2.5px solid #a084e8; outline-offset: 2px; transition: background 0.2s;">Mira nuestro proyecto actual</a>
+                                <a href="https://chatgpt.com/g/g-68487c6c84a48191b08e63a3cd6b6199-contador-de-compensacion-de-proveedores-dev" target="_blank" style="display:inline-block; background: linear-gradient(135deg, #a084e8 0%, #6a39af 100%); color: #fff; font-weight: bold; font-size: 1.1em; padding: 14px 32px; border-radius: 10px; text-decoration: none; outline: 2.5px solid #a084e8; outline-offset: 2px; transition: background 0.2s;">Mira nuestro proyecto actual</a>
                             </div>
                         </div>
                     `;
@@ -2197,72 +2314,15 @@
                     if (geoparkImg) geoparkImg.style.opacity = '1';
                 }
             });
-            // --- FADE-IN ANIMATION (Intersection Observer) for all main elements except GeoParkImg.avif section ---
-            // Helper: add observer to a NodeList or array of elements
-            function addFadeInObserver(elements) {
-                if (!elements) return;
-                const observer = new window.IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible-element');
-                            entry.target.classList.remove('fade-out');
-                        } else {
-                            entry.target.classList.remove('visible-element');
-                            entry.target.classList.add('fade-out');
-                        }
-                    });
-                }, { threshold: 0.18 });
-                elements.forEach(el => {
-                    el.classList.remove('visible-element', 'fade-out');
-                    observer.observe(el);
-                });
-            }
+            // ...existing code...
 
-            // 1. Motivational phrase
-            const fadeMotivational = document.querySelectorAll('.frase-motivacional');
-            addFadeInObserver(fadeMotivational);
+            // ...existing code...
 
-            // 2. Micro-hacks cards
-            const fadeMicroHacks = document.querySelectorAll('.micro-hack-card');
-            addFadeInObserver(fadeMicroHacks);
+            // ...existing code...
 
-            // 3. Profile outlines (individual and group)
-            const fadeOutlines = document.querySelectorAll('.outline-figura, .outline-figura-outer, .outline-figura-inner, .outline-figura-gradient-between');
-            addFadeInObserver(fadeOutlines);
+            // ...existing code...
 
-            // 4. Profile images (individual and group)
-            const fadeProfileImgs = [
-                document.getElementById('perfil-img'),
-                document.getElementById('perfil-img-2'),
-                document.getElementById('equipo-img-grupal')
-            ].filter(Boolean);
-            addFadeInObserver(fadeProfileImgs);
-
-            // 5. Profile word box
-            const fadeWordBox = document.querySelectorAll('.perfil-word-box');
-            addFadeInObserver(fadeWordBox);
-
-            // 6. Group photo rectangle (secondary)
-            const fadeRectSec = document.querySelectorAll('.equipo-perfil-rect-secundario');
-            addFadeInObserver(fadeRectSec);
-
-            // 7. Navigation arrows (profile section)
-            const fadeArrows = document.querySelectorAll('.arrow-btn, .arrow-btn-left, .arrow-btn-right');
-            addFadeInObserver(fadeArrows);
-
-            // 8. Motivational panels ("panel-content" in visible panels)
-            const fadePanels = document.querySelectorAll('.panel-content');
-            addFadeInObserver(fadePanels);
-
-            // 9. Background rectangles (e.g., .equipo-foto-grupal-rect)
-            const fadeBgRects = document.querySelectorAll('.equipo-foto-grupal-rect');
-            addFadeInObserver(fadeBgRects);
-
-            // 10. Arrows and text in GeoPark section (but NOT the .geopark-link or .geopark-image-wrapper)
-            const fadeGeoParkTexts = document.querySelectorAll('.geopark-text, .arrow-right, .arrow-left');
-            addFadeInObserver(fadeGeoParkTexts);
-
-            // --- END FADE-IN ANIMATION ---
+            // ...existing code...
         });
         // ...existing code...
     </script>
